@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>My thread</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.comment %></td>
+        <td><%= link_to 'Edit', edit_my_thread_comment_path(@my_thread,comment.id) %></td>
+        <td><%= link_to 'Destroy', my_thread_comment_path(@my_thread,comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comment', new_my_thread_comment_path(@my_thread) %>
+<%= link_to 'Back', my_threads_path %>

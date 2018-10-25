@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @my_thread.title %>
+  <%= link_to 'Edit', edit_my_thread_path(@my_thread) %> |
+  <%= link_to 'Back', my_threads_path %>
+</p>
+
+
+<tbody>
+  <% @comments.each do |comment| %>
+    <tr>
+     <td><%= comment.comment%></td>
+    </tr>  
+  <% end %>
+</tbody>

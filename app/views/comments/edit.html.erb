@@ -1,0 +1,5 @@
+<h1>Editing Comment</h1>
+
+<%= render 'form', comment: @comment , my_thread: @my_thread %>
+
+<%= link_to 'Back', my_thread_comments_path(@my_thread) %>
